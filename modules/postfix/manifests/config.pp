@@ -8,7 +8,7 @@ class postfix::config {
   file { '/etc/postfix/master.cf':
     ensure  => present,
     source  => 'puppet:///modules/postfix/master.cf',
-    requier => Class['postfix::install'],
+    require => Class['postfix::install'],
     notify  => Class['postfix::service'],
   }
 

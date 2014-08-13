@@ -16,7 +16,7 @@ class ssh::params {
       $ssh_service_name = 'sshd'
     }
     default: {
-      fail("Module ssh does not support osfamily: ${::osfamily})
+      fail("Module ssh does not support osfamily: ${::osfamily}")
     }
   }
 }
