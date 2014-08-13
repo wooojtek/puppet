@@ -13,6 +13,7 @@ node 'wb-web.changeworks.local' {
 
 node 'wb-db.changeworks.local' {
   include base
+  include mysql
 }
 
 node 'wb-mail.changeworks.local' {
