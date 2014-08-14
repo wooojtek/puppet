@@ -1,10 +1,12 @@
 class base {
   include sudo
   include ssh
+  include puppet
 }
 
 node 'wb-puppet.changeworks.local' {
   include base
+  include puppet::master
 }
 
 node 'wb-web.changeworks.local' {
