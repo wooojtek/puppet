@@ -4,29 +4,29 @@ class base {
   include puppet
 }
 
-node 'wb-puppet.changeworks.local' {
+node 'puppet.wb.local' {
   include base
   include puppet::master
 }
 
-node 'wb-web.changeworks.local' {
+node 'web.wb.local' {
   include base
 
-  apache::vhost { 'www.example.com':
+  apache::vhost { 'www.wb.local':
     port          => '80',
-    docroot       => '/var/www/www.example.com',
+    docroot       => '/var/www/www.wb.local',
     ssl           => false,
     priority      => '10',
-    serveraliases => 'home.example.com',
+    serveraliases => 'home.wb.local',
   }
 }
 
-node 'wb-db.changeworks.local' {
+node 'db.wb.local' {
   include base
   include mysql
 }
 
-node 'wb-mail.changeworks.local' {
+node 'mail.wb.local' {
   include base
   include postfix
 }

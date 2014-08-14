@@ -1,2 +1,2 @@
 import 'nodes'
-$puppetserver = 'wb-puppet.changeworks.local'
+$puppetserver = 'puppet.wb.local'
