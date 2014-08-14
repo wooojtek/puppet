@@ -8,10 +8,12 @@ class mysql (
     user  => $user,
     group => $group,
   }
+
   class { 'mysql::config':
     user  => $user,
     group => $group,
   }
+
   class { 'mysql::service':
     ensure  => $service_running,
     enabled => $service_enabled,

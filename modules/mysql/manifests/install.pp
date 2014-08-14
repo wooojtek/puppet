@@ -9,17 +9,20 @@ class mysql::install (
     'mysql5test',
     'mysql5devel'
   ]
+  
   package { $mysql_pkgs:
-    ensure => present,
+    ensure  => present,
     require => User[$user],
   }
+
   user { $user:
-    ensure => present,
+    ensure  => present,
     comment => 'MySQL user',
-    gid => $group,
-    shell => '/bin/false',
+    gid     => $group,
+    shell   => '/bin/false',
     require => Group[$group],
   }
+
   group { $group:
     ensure => present,
   }

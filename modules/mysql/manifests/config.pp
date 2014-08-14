@@ -3,16 +3,17 @@ class mysql::config (
   $group,
 ){
   file { '/opt/csw/mysql5/my.cnf':
-    ensure => present,
-    source => 'puppet:///modules/mysql/my.cnf',
-    owner => $user,
-    group => $group,
+    ensure  => present,
+    source  => 'puppet:///modules/mysql/my.cnf',
+    owner   => $user,
+    group   => $group,
     require => Class['mysql::install'],
-    notify => Class['mysql::service'],
+    notify  => Class['mysql::service'],
   }
+
   file { '/opt/csw/mysql5/var':
-    owner => $user,
-    group => $group,
+    owner   => $user,
+    group   => $group,
     recurse => true,
     require => File['/opt/csw/mysql5/my.cnf'],
   }

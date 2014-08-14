@@ -9,6 +9,14 @@ node 'wb-puppet.changeworks.local' {
 
 node 'wb-web.changeworks.local' {
   include base
+
+  apache::vhost { 'www.example.com':
+    port          => '80',
+    docroot       => '/var/www/www.example.com',
+    ssl           => false,
+    priority      => '10',
+    serveraliases => 'home.example.com',
+  }
 }
 
 node 'wb-db.changeworks.local' {
