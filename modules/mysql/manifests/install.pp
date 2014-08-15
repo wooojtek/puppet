@@ -3,11 +3,11 @@ class mysql::install (
   $group,
 ){
   $mysql_pkgs = [
-    'mysql5',
-    'mysql5client',
-    'mysql5rt',
-    'mysql5test',
-    'mysql5devel'
+    'mysql55',
+    'mysql55-server',
+    'mysql55-libs',
+    'mysql55-test',
+    'mysql55-devel'
   ]
   
   package { $mysql_pkgs:
