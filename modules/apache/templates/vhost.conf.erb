@@ -7,7 +7,7 @@ NameVirtualHost *:<%= @port %>
   <%= " serveAlias #{@serveralaises}" -%>
   <% end -%>
   DocumentRoot <%= @docroot %>
-  <Directory <% - @docroot %>>
+  <Directory <%= @docroot %>>
     Options Indexes FollowSymLinks MultiViews
     AllowOverride None
     Order allow,deny
