@@ -15,6 +15,7 @@
     group = puppet
     report = true
     reports = log,store
+    dns_alt_names = puppet,puppet.wb.local
 
 [master]
     certname = <%= @puppetserver %>
