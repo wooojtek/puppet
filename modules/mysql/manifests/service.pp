@@ -2,7 +2,7 @@ class mysql::service (
   $enabled,
   $ensure,
   ) {
-  service { 'mysql':
+  service { 'mysqld':
     ensure     => $ensure,
     hasstatus  => true,
     hasrestart => true,
