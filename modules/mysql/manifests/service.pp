@@ -1,12 +1,12 @@
 class mysql::service (
-  enabled,
-  ensure,
+  $enabled,
+  $ensure,
   ) {
-  service { 'cswmysql5':
+  service { 'mysql':
     ensure     => $ensure,
     hasstatus  => true,
     hasrestart => true,
-    enabled    => $enabled,
+    enable    => $enabled,
     require    => Class['mysql::config'],
   }
 }
