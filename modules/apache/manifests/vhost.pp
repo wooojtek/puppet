@@ -8,7 +8,7 @@ define apache::vhost(
 ){
   include apache
   
-  file { "/etc/apache2/sites-enabled/${priority}-${name}":
+  file { "/etc/httpd/conf.d/${priority}-${name}":
     content => template($template),
     owner   => 'root',
     group   => 'root',

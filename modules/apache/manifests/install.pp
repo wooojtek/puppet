@@ -1,5 +1,5 @@
 class apache::install {
-  package { [ 'apache2' ]:
+  package { [ 'httpd' ]:
     ensure => present,
   }
 }
